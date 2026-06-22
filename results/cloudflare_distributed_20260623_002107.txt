@@ -1,0 +1,126 @@
+Cloudflare Distributed Benchmark (standard-1) - Tue Jun 23 00:21:07 CEST 2026
+8 regions × 3 frameworks × 4 endpoints × 60s
+====================================================
+>>> [1/12] elysia /plaintext ...
+  wnam        963 req/s  avg:  83.28ms  p50:  26.46ms  p90: 203.06ms  p99: 346.02ms  total:   57847
+  enam       1037 req/s  avg:   79.4ms  p50:  14.75ms  p90: 206.27ms  p99: 373.26ms  total:   62315
+  weur        416 req/s  avg: 189.31ms  p50: 129.96ms  p90: 420.95ms  p99: 617.03ms  total:   25011
+  eeur        369 req/s  avg:  216.3ms  p50: 213.32ms  p90: 397.21ms  p99: 586.14ms  total:   22184
+  apac       1113 req/s  avg:  76.12ms  p50:  13.04ms  p90: 204.58ms  p99: 380.36ms  total:   66818
+  oc          907 req/s  avg:  87.64ms  p50:  59.15ms  p90:  205.4ms  p99: 371.45ms  total:   54434
+  afr        1036 req/s  avg:  82.03ms  p50:  13.52ms  p90: 209.06ms  p99: 391.11ms  total:   62313
+  me          978 req/s  avg:  88.54ms  p50:  17.06ms  p90: 228.96ms  p99: 395.49ms  total:   58779
+>>> [1/12] done
+>>> [2/12] elysia /json ...
+  wnam        899 req/s  avg:   86.8ms  p50:  59.55ms  p90: 202.69ms  p99: 326.47ms  total:   54086
+  enam        875 req/s  avg:  92.71ms  p50:     40ms  p90: 230.71ms  p99: 388.45ms  total:   52553
+  weur        430 req/s  avg: 188.13ms  p50:  55.85ms  p90: 438.76ms  p99: 599.05ms  total:   25837
+  eeur        466 req/s  avg: 171.21ms  p50: 178.07ms  p90: 379.95ms  p99: 564.94ms  total:   27963
+  apac        836 req/s  avg:  94.72ms  p50:  52.29ms  p90: 224.92ms  p99: 390.41ms  total:   50254
+  oc          920 req/s  avg:  84.72ms  p50:  53.32ms  p90: 204.14ms  p99: 372.65ms  total:   55210
+  afr         848 req/s  avg:  94.42ms  p50:  53.56ms  p90: 227.35ms  p99: 391.35ms  total:   50976
+  me          856 req/s  avg:  97.17ms  p50:  35.69ms  p90: 262.15ms  p99: 394.88ms  total:   51430
+>>> [2/12] done
+>>> [3/12] elysia /user/42 ...
+  wnam        800 req/s  avg:  93.11ms  p50:  65.97ms  p90: 205.15ms  p99:  366.1ms  total:   48141
+  enam        771 req/s  avg: 102.75ms  p50:  50.97ms  p90: 235.68ms  p99:  395.8ms  total:   46269
+  weur        396 req/s  avg: 193.75ms  p50: 134.15ms  p90: 433.24ms  p99: 625.73ms  total:   23794
+  eeur        341 req/s  avg: 230.74ms  p50: 233.02ms  p90: 406.16ms  p99: 589.19ms  total:   20495
+  apac        737 req/s  avg: 105.94ms  p50:  85.42ms  p90:  223.7ms  p99: 399.48ms  total:   44243
+  oc          753 req/s  avg:  97.91ms  p50:  91.23ms  p90: 208.92ms  p99: 378.74ms  total:   45197
+  afr         802 req/s  avg:  99.69ms  p50:  49.38ms  p90: 230.09ms  p99: 385.85ms  total:   48149
+  me          750 req/s  avg: 109.53ms  p50:  51.74ms  p90: 272.32ms  p99: 406.55ms  total:   45106
+>>> [3/12] done
+>>> [4/12] elysia /validate ...
+  wnam        852 req/s  avg:  92.18ms  p50:  64.88ms  p90:  205.6ms  p99: 378.89ms  total:   51196
+  enam        820 req/s  avg:  99.28ms  p50:  53.86ms  p90: 225.02ms  p99: 387.53ms  total:   49264
+  weur        408 req/s  avg: 192.85ms  p50:  65.77ms  p90: 471.83ms  p99: 609.31ms  total:   24543
+  eeur        345 req/s  avg: 229.39ms  p50: 265.75ms  p90: 403.79ms  p99: 568.36ms  total:   20772
+  apac        821 req/s  avg:  98.31ms  p50:  58.52ms  p90:  224.5ms  p99: 391.14ms  total:   49310
+  oc          815 req/s  avg:  92.93ms  p50:  69.08ms  p90: 206.43ms  p99: 362.56ms  total:   49008
+  afr         834 req/s  avg:   97.5ms  p50:  51.73ms  p90: 239.83ms  p99: 396.51ms  total:   50111
+  me          814 req/s  avg: 101.89ms  p50:  42.64ms  p90: 264.05ms  p99:  393.9ms  total:   48875
+>>> [4/12] done
+>>> [5/12] hono /plaintext ...
+  wnam        843 req/s  avg:   90.2ms  p50:  61.56ms  p90: 206.66ms  p99: 361.98ms  total:   50623
+  enam        831 req/s  avg:  93.09ms  p50:  48.63ms  p90:    218ms  p99: 386.22ms  total:   49935
+  weur        423 req/s  avg: 186.22ms  p50:   70.7ms  p90: 425.48ms  p99: 597.05ms  total:   25474
+  eeur        362 req/s  avg: 207.24ms  p50: 210.83ms  p90: 388.57ms  p99: 517.53ms  total:   21763
+  apac        797 req/s  avg:  97.29ms  p50:  60.81ms  p90:  213.7ms  p99:    381ms  total:   47932
+  oc          874 req/s  avg:  87.87ms  p50:  60.24ms  p90: 204.51ms  p99:  338.4ms  total:   52521
+  afr         825 req/s  avg:  93.78ms  p50:  47.17ms  p90: 218.96ms  p99: 389.39ms  total:   49493
+  me          776 req/s  avg: 101.55ms  p50:  51.77ms  p90: 260.38ms  p99: 394.41ms  total:   46638
+>>> [5/12] done
+>>> [6/12] hono /json ...
+  wnam        827 req/s  avg:  93.39ms  p50:  64.59ms  p90: 209.64ms  p99: 382.17ms  total:   49699
+  enam        804 req/s  avg:  97.47ms  p50:  50.87ms  p90:  231.1ms  p99: 395.37ms  total:   48285
+  weur        410 req/s  avg: 196.44ms  p50: 111.68ms  p90: 427.93ms  p99: 624.66ms  total:   24653
+  eeur        445 req/s  avg: 181.92ms  p50: 196.29ms  p90: 389.88ms  p99: 567.83ms  total:   26743
+  apac        788 req/s  avg: 100.36ms  p50:  62.09ms  p90: 224.64ms  p99: 390.67ms  total:   47419
+  oc          801 req/s  avg:  92.82ms  p50:  64.37ms  p90: 208.01ms  p99: 370.99ms  total:   48212
+  afr         797 req/s  avg:  99.69ms  p50:  48.89ms  p90: 257.16ms  p99: 393.11ms  total:   47834
+  me          794 req/s  avg: 102.81ms  p50:  42.49ms  p90: 272.97ms  p99: 403.08ms  total:   47643
+>>> [6/12] done
+>>> [7/12] hono /user/42 ...
+  wnam        828 req/s  avg:  91.32ms  p50:  63.71ms  p90: 205.99ms  p99: 371.74ms  total:   49772
+  enam        801 req/s  avg:   99.4ms  p50:  52.23ms  p90: 235.78ms  p99: 390.94ms  total:   48161
+  weur        413 req/s  avg: 192.36ms  p50:  96.98ms  p90: 426.99ms  p99: 610.82ms  total:   24810
+  eeur        461 req/s  avg: 174.32ms  p50: 189.56ms  p90: 385.05ms  p99: 506.21ms  total:   27680
+  apac        824 req/s  avg:  95.95ms  p50:  59.46ms  p90: 214.71ms  p99:  387.8ms  total:   49482
+  oc          794 req/s  avg:  93.29ms  p50:  85.01ms  p90: 206.37ms  p99:  327.6ms  total:   47694
+  afr         824 req/s  avg:  95.72ms  p50:  51.93ms  p90:  222.4ms  p99: 390.07ms  total:   49554
+  me          789 req/s  avg: 101.93ms  p50:  40.88ms  p90: 272.44ms  p99: 399.95ms  total:   47472
+>>> [7/12] done
+>>> [8/12] hono /validate ...
+  wnam        894 req/s  avg:  88.78ms  p50:  58.79ms  p90: 206.79ms  p99: 375.46ms  total:   53710
+  enam        865 req/s  avg:  94.56ms  p50:   47.2ms  p90: 224.19ms  p99:  388.4ms  total:   51957
+  weur        473 req/s  avg: 169.23ms  p50:  54.01ms  p90: 407.37ms  p99: 607.97ms  total:   28405
+  eeur        367 req/s  avg: 215.43ms  p50: 222.55ms  p90: 395.83ms  p99: 524.92ms  total:   22071
+  apac        858 req/s  avg:  93.17ms  p50:  57.38ms  p90: 212.73ms  p99:  381.6ms  total:   51607
+  oc          856 req/s  avg:  92.06ms  p50:  63.03ms  p90: 206.93ms  p99: 376.57ms  total:   51402
+  afr         863 req/s  avg:  91.92ms  p50:  52.77ms  p90: 212.54ms  p99: 374.32ms  total:   51916
+  me          823 req/s  avg:  99.55ms  p50:  36.99ms  p90:  269.2ms  p99: 399.84ms  total:   49397
+>>> [8/12] done
+>>> [9/12] h3 /plaintext ...
+  wnam        790 req/s  avg:  94.16ms  p50:  68.16ms  p90: 208.53ms  p99: 328.33ms  total:   47464
+  enam        764 req/s  avg: 100.79ms  p50:  62.62ms  p90: 219.82ms  p99: 383.38ms  total:   45899
+  weur        395 req/s  avg: 201.94ms  p50: 195.95ms  p90: 455.87ms  p99: 607.39ms  total:   23731
+  eeur        439 req/s  avg: 178.38ms  p50: 194.02ms  p90: 385.68ms  p99: 509.31ms  total:   26358
+  apac        715 req/s  avg: 107.33ms  p50:  92.92ms  p90: 224.04ms  p99: 383.88ms  total:   42992
+  oc          752 req/s  avg:   97.1ms  p50:   92.5ms  p90: 205.46ms  p99: 366.16ms  total:   45256
+  afr         751 req/s  avg: 101.56ms  p50:  60.33ms  p90: 224.75ms  p99: 392.02ms  total:   45149
+  me          739 req/s  avg: 108.09ms  p50:  58.78ms  p90: 273.42ms  p99: 396.97ms  total:   44375
+>>> [9/12] done
+>>> [10/12] h3 /json ...
+  wnam        881 req/s  avg:  89.07ms  p50:  56.98ms  p90:    205ms  p99: 366.72ms  total:   52941
+  enam        845 req/s  avg:   94.1ms  p50:  49.06ms  p90: 218.25ms  p99: 387.41ms  total:   50767
+  weur        430 req/s  avg: 189.73ms  p50:  62.36ms  p90: 418.86ms  p99:    603ms  total:   25804
+  eeur        368 req/s  avg: 216.35ms  p50: 223.15ms  p90: 400.62ms  p99: 586.83ms  total:   22119
+  apac        827 req/s  avg:  94.34ms  p50:   56.1ms  p90: 218.57ms  p99: 380.85ms  total:   49667
+  oc          844 req/s  avg:  89.37ms  p50:  63.03ms  p90: 203.95ms  p99: 367.37ms  total:   50671
+  afr         841 req/s  avg:   95.6ms  p50:   52.8ms  p90: 224.05ms  p99: 384.56ms  total:   50484
+  me          819 req/s  avg: 100.92ms  p50:   45.9ms  p90: 266.88ms  p99: 397.11ms  total:   49217
+>>> [10/12] done
+>>> [11/12] h3 /user/42 ...
+  wnam        835 req/s  avg:   92.4ms  p50:  63.77ms  p90: 206.66ms  p99: 337.72ms  total:   50119
+  enam        810 req/s  avg:  98.51ms  p50:  54.23ms  p90: 226.04ms  p99:    388ms  total:   48686
+  weur        423 req/s  avg: 189.86ms  p50: 101.93ms  p90: 412.63ms  p99: 593.16ms  total:   25408
+  eeur        397 req/s  avg: 202.61ms  p50: 220.23ms  p90: 394.01ms  p99: 529.05ms  total:   23896
+  apac        787 req/s  avg:  96.81ms  p50:   63.6ms  p90: 213.45ms  p99: 377.33ms  total:   47262
+  oc          783 req/s  avg:  93.89ms  p50:  68.62ms  p90:  207.5ms  p99: 360.71ms  total:   47135
+  afr         792 req/s  avg: 100.64ms  p50:   54.8ms  p90: 233.21ms  p99: 396.64ms  total:   47533
+  me          781 req/s  avg: 101.24ms  p50:  48.45ms  p90: 265.02ms  p99: 391.29ms  total:   46927
+>>> [11/12] done
+>>> [12/12] h3 /validate ...
+  wnam        789 req/s  avg:  96.91ms  p50:  68.22ms  p90: 210.36ms  p99: 384.46ms  total:   47405
+  enam        507 req/s  avg: 147.12ms  p50: 163.18ms  p90: 285.12ms  p99: 403.49ms  total:   30432
+  weur        396 req/s  avg: 197.38ms  p50: 116.61ms  p90: 457.74ms  p99: 616.67ms  total:   23814
+  eeur        368 req/s  avg: 213.07ms  p50: 218.85ms  p90: 403.27ms  p99: 601.87ms  total:   22112
+  apac        537 req/s  avg: 140.84ms  p50: 133.94ms  p90: 274.55ms  p99: 396.32ms  total:   32245
+  oc          762 req/s  avg:  96.28ms  p50:  88.85ms  p90: 206.73ms  p99: 369.04ms  total:   45755
+  afr         784 req/s  avg: 100.91ms  p50:  54.31ms  p90:  236.7ms  p99: 394.61ms  total:   47102
+  me          755 req/s  avg: 106.68ms  p50:  52.59ms  p90: 264.76ms  p99: 392.84ms  total:   45396
+>>> [12/12] done
+
+====================================================
+Complete: /Users/gabrieldelattre/Sources/edumapper/framework-test/framework-benchmark/results/cloudflare_distributed_20260623_002107.txt

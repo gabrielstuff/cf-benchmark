@@ -1,0 +1,7 @@
+FROM python:3.13-slim
+WORKDIR /app
+RUN pip install --no-cache-dir granian blacksheep orjson uvloop
+COPY python-servers/server_blacksheep.py .
+COPY python-servers/server_blacksheep_orjson.py .
+EXPOSE 3000
+CMD ["granian", "--interface", "asgi", "--loop", "uvloop", "--http", "1", "--no-ws", "--host", "0.0.0.0", "--port", "3000", "--log-level", "error", "--workers", "2", "server_blacksheep:app"]

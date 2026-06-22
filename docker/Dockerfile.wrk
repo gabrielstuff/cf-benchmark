@@ -1,0 +1,7 @@
+FROM alpine:3.20
+RUN apk add --no-cache wrk curl bash
+WORKDIR /bench
+COPY post_validate.lua .
+COPY docker/run_bench.sh .
+RUN chmod +x run_bench.sh
+CMD ["./run_bench.sh"]

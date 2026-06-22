@@ -1,0 +1,11 @@
+{
+  "name": "bench-h3",
+  "private": true,
+  "dependencies": {
+    "h3": "^2.0.1-rc.22",
+    "@sinclair/typebox": "^0.34.49"
+  },
+  "devDependencies": {
+    "wrangler": "^4.74.0"
+  }
+}

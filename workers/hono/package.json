@@ -1,0 +1,12 @@
+{
+  "name": "bench-hono",
+  "private": true,
+  "dependencies": {
+    "hono": "^4.12.26",
+    "@sinclair/typebox": "^0.34.49"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.0",
+    "wrangler": "^4.74.0"
+  }
+}

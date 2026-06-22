@@ -1,0 +1,4 @@
+name = "bench-fastify"
+main = "src/index.ts"
+compatibility_date = "2025-09-15"
+compatibility_flags = ["nodejs_compat"]

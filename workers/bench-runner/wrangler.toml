@@ -1,0 +1,36 @@
+name = "bench-runner"
+main = "src/index.ts"
+compatibility_date = "2026-01-10"
+
+[[kv_namespaces]]
+binding = "RESULTS"
+id = "32d3c7328ca64228a66e37df3cfbd51d"
+
+# Container: Alpine + wrk + Node.js load tester
+[[containers]]
+class_name = "BenchmarkDO"
+image = "./Dockerfile"
+instance_type = "standard-1"
+max_instances = 8
+
+# Durable Object binding (one instance per region via locationHint)
+[[durable_objects.bindings]]
+name = "BENCH_DO"
+class_name = "BenchmarkDO"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["BenchmarkDO"]
+
+# Service bindings to target Workers (kept for internal comparison)
+[[services]]
+binding = "BENCH_ELYSIA"
+service = "bench-elysia"
+
+[[services]]
+binding = "BENCH_HONO"
+service = "bench-hono"
+
+[[services]]
+binding = "BENCH_H3"
+service = "bench-h3"

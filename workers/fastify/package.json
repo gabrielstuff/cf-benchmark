@@ -1,0 +1,11 @@
+{
+  "name": "bench-fastify",
+  "private": true,
+  "dependencies": {
+    "fastify": "^5.8.5",
+    "@sinclair/typebox": "^0.34.49"
+  },
+  "devDependencies": {
+    "wrangler": "^4.74.0"
+  }
+}

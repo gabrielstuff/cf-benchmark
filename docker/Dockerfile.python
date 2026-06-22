@@ -1,0 +1,8 @@
+FROM python:3.13-slim
+WORKDIR /app
+RUN pip install --no-cache-dir uvicorn[standard] blacksheep fastapi pydantic
+COPY python-servers/server_blacksheep.py .
+COPY python-servers/server_fastapi.py .
+EXPOSE 3000
+# CMD set at runtime via docker-compose
+CMD ["uvicorn", "server_blacksheep:app", "--host", "0.0.0.0", "--port", "3000", "--log-level", "error"]

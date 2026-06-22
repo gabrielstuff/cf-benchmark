@@ -1,0 +1,282 @@
+======================================================
+ Docker Benchmark - Tue Feb 10 21:22:36 +03 2026
+ Mode: blog
+ Server: 2 CPUs, 512MB, 2 workers | wrk: 2 CPUs, 256MB
+ Duration: 10s per endpoint
+ Frameworks: gin elysia blacksheep blacksheep-granian-orjson fastapi
+======================================================
+Building images...
+
+>>> Starting gin ...
+
+============================================
+ Benchmarking: gin
+ Target: gin:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- gin / plaintext ---
+Running 10s test @ http://gin:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   569.97us  702.20us  10.00ms   89.62%
+    Req/Sec   150.68k    26.41k  189.97k    76.50%
+  2997569 requests in 10.00s, 371.63MB read
+Requests/sec: 299631.59
+Transfer/sec:     37.15MB
+
+--- gin / json ---
+Running 10s test @ http://gin:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   529.20us  565.15us   8.14ms   89.94%
+    Req/Sec   145.02k    16.25k  178.01k    67.50%
+  2884556 requests in 10.00s, 412.64MB read
+Requests/sec: 288408.45
+Transfer/sec:     41.26MB
+
+--- gin / params ---
+Running 10s test @ http://gin:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   565.09us  571.47us   9.30ms   89.63%
+    Req/Sec   134.00k    10.90k  155.19k    70.79%
+  2691776 requests in 10.10s, 387.63MB read
+Requests/sec: 266470.58
+Transfer/sec:     38.37MB
+
+--- gin / validate (POST) ---
+Running 10s test @ http://gin:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   767.03us  756.03us  11.86ms   89.01%
+    Req/Sec    98.18k     8.67k  115.63k    64.00%
+  1953645 requests in 10.00s, 299.97MB read
+Requests/sec: 195275.02
+Transfer/sec:     29.98MB
+
+=== gin DONE ===
+>>> gin complete.
+
+>>> Starting elysia ...
+
+============================================
+ Benchmarking: elysia
+ Target: elysia:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- elysia / plaintext ---
+Running 10s test @ http://elysia:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   533.07us  350.84us   6.78ms   85.28%
+    Req/Sec   124.36k    33.06k  187.78k    56.22%
+  2485861 requests in 10.10s, 305.82MB read
+Requests/sec: 246067.74
+Transfer/sec:     30.27MB
+
+--- elysia / json ---
+Running 10s test @ http://elysia:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   591.06us  335.96us   4.75ms   81.81%
+    Req/Sec   110.76k    28.81k  174.39k    65.17%
+  2213350 requests in 10.10s, 284.96MB read
+Requests/sec: 219088.90
+Transfer/sec:     28.21MB
+
+--- elysia / params ---
+Running 10s test @ http://elysia:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   697.81us  367.71us   4.63ms   81.97%
+    Req/Sec    93.52k    28.21k  156.00k    70.79%
+  1878673 requests in 10.10s, 243.66MB read
+Requests/sec: 185984.21
+Transfer/sec:     24.12MB
+
+--- elysia / validate (POST) ---
+Running 10s test @ http://elysia:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25ms  245.66us   4.99ms   78.43%
+    Req/Sec    51.52k     4.15k   71.10k    80.20%
+  1035237 requests in 10.10s, 144.14MB read
+Requests/sec: 102487.81
+Transfer/sec:     14.27MB
+
+=== elysia DONE ===
+>>> elysia complete.
+
+>>> Starting blacksheep ...
+
+============================================
+ Benchmarking: blacksheep
+ Target: blacksheep:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- blacksheep / plaintext ---
+Running 10s test @ http://blacksheep:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   848.43us  432.25us  23.65ms   90.37%
+    Req/Sec    76.43k     7.98k   84.86k    86.00%
+  1521156 requests in 10.01s, 213.25MB read
+Requests/sec: 152004.91
+Transfer/sec:     21.31MB
+
+--- blacksheep / json ---
+Running 10s test @ http://blacksheep:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.99ms  401.05us   8.97ms   78.35%
+    Req/Sec    65.31k     5.54k   73.01k    69.50%
+  1299926 requests in 10.00s, 188.44MB read
+Requests/sec: 129958.25
+Transfer/sec:     18.84MB
+
+--- blacksheep / params ---
+Running 10s test @ http://blacksheep:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.99ms  379.98us   5.78ms   73.50%
+    Req/Sec    64.81k     7.13k   73.19k    72.77%
+  1302310 requests in 10.10s, 190.02MB read
+Requests/sec: 128939.25
+Transfer/sec:     18.81MB
+
+--- blacksheep / validate (POST) ---
+Running 10s test @ http://blacksheep:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30ms  449.63us   6.66ms   78.98%
+    Req/Sec    49.69k     3.36k   55.90k    58.00%
+  988945 requests in 10.01s, 153.73MB read
+Requests/sec:  98829.28
+Transfer/sec:     15.36MB
+
+=== blacksheep DONE ===
+>>> blacksheep complete.
+
+>>> Starting blacksheep-granian-orjson ...
+
+============================================
+ Benchmarking: blacksheep-granian-orjson
+ Target: blacksheep-granian-orjson:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- blacksheep-granian-orjson / plaintext ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   614.59us  630.81us  15.06ms   96.21%
+    Req/Sec   102.88k     6.95k  119.59k    76.00%
+  2047942 requests in 10.01s, 287.10MB read
+Requests/sec: 204575.14
+Transfer/sec:     28.68MB
+
+--- blacksheep-granian-orjson / json ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.57ms    7.30ms  47.90ms   86.66%
+    Req/Sec   101.76k     6.02k  126.41k    71.29%
+  2044647 requests in 10.10s, 296.39MB read
+Requests/sec: 202394.07
+Transfer/sec:     29.34MB
+
+--- blacksheep-granian-orjson / params ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.97ms    6.41ms  40.19ms   88.29%
+    Req/Sec    95.91k     7.32k  140.57k    70.65%
+  1917856 requests in 10.10s, 279.84MB read
+Requests/sec: 189880.75
+Transfer/sec:     27.71MB
+
+--- blacksheep-granian-orjson / validate (POST) ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.65ms    4.93ms  30.43ms   89.08%
+    Req/Sec    60.08k     4.03k   72.65k    66.83%
+  1207219 requests in 10.10s, 187.66MB read
+Requests/sec: 119527.49
+Transfer/sec:     18.58MB
+
+=== blacksheep-granian-orjson DONE ===
+>>> blacksheep-granian-orjson complete.
+
+>>> Starting fastapi ...
+
+============================================
+ Benchmarking: fastapi
+ Target: fastapi:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- fastapi / plaintext ---
+Running 10s test @ http://fastapi:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.61ms  677.01us  31.79ms   87.16%
+    Req/Sec    40.12k     2.55k   43.34k    81.00%
+  798417 requests in 10.01s, 111.93MB read
+Requests/sec:  79784.93
+Transfer/sec:     11.19MB
+
+--- fastapi / json ---
+Running 10s test @ http://fastapi:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.92ms  550.45us   6.88ms   74.37%
+    Req/Sec    33.39k     2.68k   65.48k    96.52%
+  667969 requests in 10.10s, 96.83MB read
+Requests/sec:  66114.45
+Transfer/sec:      9.58MB
+
+--- fastapi / params ---
+Running 10s test @ http://fastapi:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.48ms  636.09us   8.97ms   82.99%
+    Req/Sec    25.92k     0.91k   28.19k    63.00%
+  515866 requests in 10.01s, 75.27MB read
+Requests/sec:  51559.90
+Transfer/sec:      7.52MB
+
+--- fastapi / validate (POST) ---
+Running 10s test @ http://fastapi:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.78ms    0.89ms   8.98ms   73.35%
+    Req/Sec    23.11k   785.36    25.03k    70.50%
+  460146 requests in 10.01s, 71.53MB read
+Requests/sec:  45962.50
+Transfer/sec:      7.14MB
+
+=== fastapi DONE ===
+>>> fastapi complete.
+
+======================================================
+ ALL DONE - Results: /Users/cemrehan/development/framework-benchmark/results/docker_benchmark_20260210_212236.txt
+======================================================

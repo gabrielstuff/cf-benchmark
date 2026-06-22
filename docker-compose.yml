@@ -1,0 +1,117 @@
+services:
+  # ---- Servers (run one at a time via profiles) ----
+
+  gin:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gin
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [gin]
+
+  elysia:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.elysia
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [elysia]
+
+  fastify:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.fastify
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [fastify]
+
+  fastify-bun:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.fastify-bun
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [fastify-bun]
+
+  hono:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.hono
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [hono]
+
+  h3:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.h3
+    cpus: 2
+    mem_limit: 512m
+    environment:
+      - WORKERS=2
+    networks: [bench]
+    profiles: [h3]
+
+  blacksheep:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python
+    command: ["uvicorn", "server_blacksheep:app", "--host", "0.0.0.0", "--port", "3000", "--log-level", "error", "--workers", "2"]
+    cpus: 2
+    mem_limit: 512m
+    networks: [bench]
+    profiles: [blacksheep]
+
+  blacksheep-granian-orjson:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python-granian
+    command: ["granian", "--interface", "asgi", "--loop", "uvloop", "--http", "1", "--no-ws", "--host", "0.0.0.0", "--port", "3000", "--log-level", "error", "--workers", "2", "server_blacksheep_orjson:app"]
+    cpus: 2
+    mem_limit: 512m
+    networks: [bench]
+    profiles: [blacksheep-granian-orjson]
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python
+    command: ["uvicorn", "server_fastapi:app", "--host", "0.0.0.0", "--port", "3000", "--log-level", "error", "--workers", "2"]
+    cpus: 2
+    mem_limit: 512m
+    networks: [bench]
+    profiles: [fastapi]
+
+  # ---- Benchmark client ----
+
+  wrk:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.wrk
+    cpus: 2
+    mem_limit: 256m
+    environment:
+      - SERVER_HOST=${SERVER_HOST:-server}
+      - SERVER_NAME=${SERVER_NAME:-unknown}
+      - DURATION=${DURATION:-10s}
+    networks: [bench]
+    profiles: [wrk]
+
+networks:
+  bench:
+    driver: bridge

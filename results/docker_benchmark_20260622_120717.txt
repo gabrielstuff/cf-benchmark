@@ -1,0 +1,534 @@
+======================================================
+ Docker Benchmark - Mon Jun 22 12:07:17 CEST 2026
+ Server: 2 CPUs, 512MB, 2 workers | wrk: 2 CPUs, 256MB
+ Duration: 10s per endpoint
+ Frameworks: gin elysia fastify fastify-bun hono h3 blacksheep blacksheep-granian-orjson fastapi
+======================================================
+Building images...
+
+>>> Starting gin ...
+time="2026-06-22T12:07:17+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:07:17+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-fab8eea4ac84 Creating 
+ Container framework-benchmark-wrk-run-fab8eea4ac84 Created 
+
+============================================
+ Benchmarking: gin
+ Target: gin:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- gin / plaintext ---
+Running 10s test @ http://gin:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   583.67us  816.17us  37.72ms   96.21%
+    Req/Sec   120.93k     4.64k  132.28k    68.00%
+  2405830 requests in 10.00s, 298.27MB read
+Requests/sec: 240525.80
+Transfer/sec:     29.82MB
+
+--- gin / json ---
+Running 10s test @ http://gin:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   611.57us  437.05us   4.63ms   65.41%
+    Req/Sec   110.82k     3.70k  119.24k    68.32%
+  2225431 requests in 10.10s, 318.35MB read
+Requests/sec: 220332.39
+Transfer/sec:     31.52MB
+
+--- gin / params ---
+Running 10s test @ http://gin:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   629.40us  450.37us   4.30ms   65.47%
+    Req/Sec   107.74k     3.62k  117.44k    68.81%
+  2164343 requests in 10.10s, 311.68MB read
+Requests/sec: 214275.22
+Transfer/sec:     30.86MB
+
+--- gin / validate (POST) ---
+Running 10s test @ http://gin:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   820.01us  643.88us  14.17ms   71.57%
+    Req/Sec    83.21k     4.98k   92.84k    86.50%
+  1655293 requests in 10.00s, 254.16MB read
+Requests/sec: 165485.55
+Transfer/sec:     25.41MB
+
+=== gin DONE ===
+>>> gin complete.
+
+>>> Starting elysia ...
+time="2026-06-22T12:08:01+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:08:01+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-26b18a1b0181 Creating 
+ Container framework-benchmark-wrk-run-26b18a1b0181 Created 
+
+============================================
+ Benchmarking: elysia
+ Target: elysia:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- elysia / plaintext ---
+Running 10s test @ http://elysia:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   545.80us    1.26ms  18.91ms   95.50%
+    Req/Sec   200.64k    13.18k  232.73k    75.50%
+  3991786 requests in 10.00s, 491.09MB read
+  Socket errors: connect 0, read 0, write 0, timeout 85
+Requests/sec: 399090.64
+Transfer/sec:     49.10MB
+
+--- elysia / json ---
+Running 10s test @ http://elysia:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   590.65us    1.26ms  16.92ms   95.45%
+    Req/Sec   175.66k    10.77k  204.53k    70.79%
+  3529199 requests in 10.10s, 501.49MB read
+Requests/sec: 349402.67
+Transfer/sec:     49.65MB
+
+--- elysia / params ---
+Running 10s test @ http://elysia:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   606.24us    1.25ms  20.59ms   95.52%
+    Req/Sec   165.75k     9.63k  191.78k    72.00%
+  3296241 requests in 10.00s, 471.53MB read
+Requests/sec: 329601.29
+Transfer/sec:     47.15MB
+
+--- elysia / validate (POST) ---
+Running 10s test @ http://elysia:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.02ms    2.34ms  42.91ms   95.36%
+    Req/Sec   102.42k     9.61k  118.74k    85.15%
+  2057886 requests in 10.10s, 314.01MB read
+Requests/sec: 203736.06
+Transfer/sec:     31.09MB
+
+=== elysia DONE ===
+>>> elysia complete.
+
+>>> Starting fastify ...
+time="2026-06-22T12:08:46+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:08:46+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-390587945f71 Creating 
+ Container framework-benchmark-wrk-run-390587945f71 Created 
+
+============================================
+ Benchmarking: fastify
+ Target: fastify:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- fastify / plaintext ---
+Running 10s test @ http://fastify:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48ms    6.23ms 151.83ms   97.96%
+    Req/Sec    84.67k    14.19k   95.84k    95.00%
+  1684488 requests in 10.00s, 285.95MB read
+Requests/sec: 168389.11
+Transfer/sec:     28.58MB
+
+--- fastify / json ---
+Running 10s test @ http://fastify:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.88ms    1.14ms  54.51ms   98.58%
+    Req/Sec    79.21k     7.97k   91.42k    73.27%
+  1591350 requests in 10.10s, 300.49MB read
+Requests/sec: 157552.28
+Transfer/sec:     29.75MB
+
+--- fastify / params ---
+Running 10s test @ http://fastify:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.91ms    1.03ms  52.47ms   98.70%
+    Req/Sec    75.01k     7.56k  130.00k    82.59%
+  1499423 requests in 10.10s, 284.56MB read
+Requests/sec: 148448.68
+Transfer/sec:     28.17MB
+
+--- fastify / validate (POST) ---
+Running 10s test @ http://fastify:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.89ms    9.75ms 221.79ms   91.77%
+    Req/Sec    22.77k     4.61k   30.02k    75.50%
+  453140 requests in 10.00s, 90.32MB read
+Requests/sec:  45308.91
+Transfer/sec:      9.03MB
+
+=== fastify DONE ===
+>>> fastify complete.
+
+>>> Starting fastify-bun ...
+time="2026-06-22T12:09:32+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:09:32+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-079f5a42f43c Creating 
+ Container framework-benchmark-wrk-run-079f5a42f43c Created 
+
+============================================
+ Benchmarking: fastify-bun
+ Target: fastify-bun:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- fastify-bun / plaintext ---
+Running 10s test @ http://fastify-bun:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.41ms    1.71ms  46.71ms   99.20%
+    Req/Sec    48.71k     4.44k   55.63k    89.00%
+  969326 requests in 10.00s, 120.17MB read
+Requests/sec:  96906.84
+Transfer/sec:     12.01MB
+
+--- fastify-bun / json ---
+Running 10s test @ http://fastify-bun:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.57ms  383.20us   6.75ms   88.28%
+    Req/Sec    41.11k     1.96k   46.45k    66.50%
+  818007 requests in 10.00s, 117.02MB read
+Requests/sec:  81776.94
+Transfer/sec:     11.70MB
+
+--- fastify-bun / params ---
+Running 10s test @ http://fastify-bun:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.69ms  425.84us  12.76ms   87.46%
+    Req/Sec    38.26k     1.94k   42.44k    68.00%
+  761148 requests in 10.00s, 109.61MB read
+Requests/sec:  76101.22
+Transfer/sec:     10.96MB
+
+--- fastify-bun / validate (POST) ---
+Running 10s test @ http://fastify-bun:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.79ms    1.27ms  17.01ms   82.99%
+    Req/Sec    17.03k     0.86k   18.61k    82.50%
+  339003 requests in 10.01s, 52.05MB read
+Requests/sec:  33881.64
+Transfer/sec:      5.20MB
+
+=== fastify-bun DONE ===
+>>> fastify-bun complete.
+
+>>> Starting hono ...
+time="2026-06-22T12:10:17+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:10:17+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-ca79135c15b2 Creating 
+ Container framework-benchmark-wrk-run-ca79135c15b2 Created 
+
+============================================
+ Benchmarking: hono
+ Target: hono:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- hono / plaintext ---
+Running 10s test @ http://hono:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05ms    1.59ms  44.85ms   99.49%
+    Req/Sec    66.59k     7.19k   83.07k    74.50%
+  1324625 requests in 10.00s, 162.96MB read
+Requests/sec: 132430.17
+Transfer/sec:     16.29MB
+
+--- hono / json ---
+Running 10s test @ http://hono:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05ms  285.93us   7.21ms   88.04%
+    Req/Sec    61.52k     5.53k   74.58k    68.32%
+  1236111 requests in 10.10s, 159.14MB read
+Requests/sec: 122377.12
+Transfer/sec:     15.76MB
+
+--- hono / params ---
+Running 10s test @ http://hono:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms  334.00us   7.89ms   88.27%
+    Req/Sec    54.84k     7.21k   67.98k    61.00%
+  1090835 requests in 10.00s, 141.48MB read
+Requests/sec: 109077.47
+Transfer/sec:     14.15MB
+
+--- hono / validate (POST) ---
+Running 10s test @ http://hono:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.35ms    1.03ms  37.32ms   97.95%
+    Req/Sec    49.48k     5.07k   57.23k    80.00%
+  984751 requests in 10.00s, 137.11MB read
+Requests/sec:  98456.94
+Transfer/sec:     13.71MB
+
+=== hono DONE ===
+>>> hono complete.
+
+>>> Starting h3 ...
+time="2026-06-22T12:11:02+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:11:02+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-5eb16faa75e2 Creating 
+ Container framework-benchmark-wrk-run-5eb16faa75e2 Created 
+
+============================================
+ Benchmarking: h3
+ Target: h3:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- h3 / plaintext ---
+Running 10s test @ http://h3:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.00ms    1.04ms  33.66ms   98.95%
+    Req/Sec    67.50k     4.55k   74.66k    83.50%
+  1342359 requests in 10.00s, 165.14MB read
+Requests/sec: 134210.60
+Transfer/sec:     16.51MB
+
+--- h3 / json ---
+Running 10s test @ http://h3:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.91ms  273.15us   5.21ms   90.38%
+    Req/Sec    70.91k     6.01k   83.39k    68.81%
+  1425493 requests in 10.10s, 202.56MB read
+Requests/sec: 141107.51
+Transfer/sec:     20.05MB
+
+--- h3 / params ---
+Running 10s test @ http://h3:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.06ms  290.35us   5.05ms   83.82%
+    Req/Sec    60.88k     7.15k   85.27k    81.19%
+  1223270 requests in 10.10s, 174.99MB read
+Requests/sec: 121099.85
+Transfer/sec:     17.32MB
+
+--- h3 / validate (POST) ---
+Running 10s test @ http://h3:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.27ms  299.30us   5.58ms   89.58%
+    Req/Sec    50.71k     2.31k   56.73k    71.78%
+  1019185 requests in 10.10s, 155.52MB read
+Requests/sec: 100894.51
+Transfer/sec:     15.40MB
+
+=== h3 DONE ===
+>>> h3 complete.
+
+>>> Starting blacksheep ...
+time="2026-06-22T12:11:47+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:11:47+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-6087e70f0f7b Creating 
+ Container framework-benchmark-wrk-run-6087e70f0f7b Created 
+
+============================================
+ Benchmarking: blacksheep
+ Target: blacksheep:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- blacksheep / plaintext ---
+Running 10s test @ http://blacksheep:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.09ms  753.53us  42.97ms   95.17%
+    Req/Sec    59.88k     6.52k   72.29k    56.00%
+  1191788 requests in 10.01s, 167.08MB read
+Requests/sec: 119066.92
+Transfer/sec:     16.69MB
+
+--- blacksheep / json ---
+Running 10s test @ http://blacksheep:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.21ms  368.30us   7.40ms   81.05%
+    Req/Sec    52.94k     1.40k   56.90k    73.76%
+  1064270 requests in 10.10s, 154.27MB read
+Requests/sec: 105364.06
+Transfer/sec:     15.27MB
+
+--- blacksheep / params ---
+Running 10s test @ http://blacksheep:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.27ms  409.53us   6.94ms   80.73%
+    Req/Sec    50.58k     1.83k   55.00k    74.75%
+  1016236 requests in 10.10s, 148.28MB read
+Requests/sec: 100610.46
+Transfer/sec:     14.68MB
+
+--- blacksheep / validate (POST) ---
+Running 10s test @ http://blacksheep:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.53ms  444.92us   5.61ms   82.75%
+    Req/Sec    41.77k     1.26k   44.78k    70.30%
+  839454 requests in 10.10s, 130.49MB read
+Requests/sec:  83091.42
+Transfer/sec:     12.92MB
+
+=== blacksheep DONE ===
+>>> blacksheep complete.
+
+>>> Starting blacksheep-granian-orjson ...
+time="2026-06-22T12:12:33+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:12:33+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-6ce428ead904 Creating 
+ Container framework-benchmark-wrk-run-6ce428ead904 Created 
+
+============================================
+ Benchmarking: blacksheep-granian-orjson
+ Target: blacksheep-granian-orjson:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- blacksheep-granian-orjson / plaintext ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.66ms   12.88ms  66.93ms   82.54%
+    Req/Sec    67.34k     3.20k   76.84k    70.79%
+  1353687 requests in 10.10s, 189.77MB read
+Requests/sec: 133963.69
+Transfer/sec:     18.78MB
+
+--- blacksheep-granian-orjson / json ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.77ms   13.03ms  51.93ms   82.40%
+    Req/Sec    66.92k     4.46k   78.58k    68.50%
+  1331269 requests in 10.00s, 192.98MB read
+Requests/sec: 133110.26
+Transfer/sec:     19.30MB
+
+--- blacksheep-granian-orjson / params ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.41ms   12.49ms  50.10ms   82.61%
+    Req/Sec    63.60k     3.54k   71.56k    72.00%
+  1265016 requests in 10.00s, 184.58MB read
+Requests/sec: 126491.27
+Transfer/sec:     18.46MB
+
+--- blacksheep-granian-orjson / validate (POST) ---
+Running 10s test @ http://blacksheep-granian-orjson:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.95ms   11.08ms  45.80ms   83.20%
+    Req/Sec    34.82k     1.74k   39.03k    67.50%
+  693062 requests in 10.00s, 107.74MB read
+Requests/sec:  69301.41
+Transfer/sec:     10.77MB
+
+=== blacksheep-granian-orjson DONE ===
+>>> blacksheep-granian-orjson complete.
+
+>>> Starting fastapi ...
+time="2026-06-22T12:13:18+02:00" level=warning msg="No services to build"
+time="2026-06-22T12:13:18+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-46032e31fdab Creating 
+ Container framework-benchmark-wrk-run-46032e31fdab Created 
+
+============================================
+ Benchmarking: fastapi
+ Target: fastapi:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- fastapi / plaintext ---
+Running 10s test @ http://fastapi:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.83ms    1.34ms  62.84ms   95.77%
+    Req/Sec    36.04k     1.46k   38.03k    89.00%
+  717729 requests in 10.01s, 100.62MB read
+Requests/sec:  71717.39
+Transfer/sec:     10.05MB
+
+--- fastapi / json ---
+Running 10s test @ http://fastapi:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.00ms  743.07us  19.49ms   83.20%
+    Req/Sec    32.36k     1.98k   34.94k    89.00%
+  644563 requests in 10.01s, 93.43MB read
+Requests/sec:  64389.53
+Transfer/sec:      9.33MB
+
+--- fastapi / params ---
+Running 10s test @ http://fastapi:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.04ms    2.91ms  66.04ms   98.01%
+    Req/Sec    22.51k     2.67k   25.61k    77.50%
+  449017 requests in 10.03s, 65.52MB read
+Requests/sec:  44752.65
+Transfer/sec:      6.53MB
+
+--- fastapi / validate (POST) ---
+Running 10s test @ http://fastapi:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.33ms    1.47ms  49.18ms   87.78%
+    Req/Sec    19.58k     1.71k   21.98k    75.00%
+  391093 requests in 10.04s, 60.79MB read
+Requests/sec:  38965.99
+Transfer/sec:      6.06MB
+
+=== fastapi DONE ===
+>>> fastapi complete.
+
+======================================================
+ ALL DONE - Results: /Users/gabrieldelattre/Sources/edumapper/framework-test/framework-benchmark/results/docker_benchmark_20260622_120717.txt
+======================================================

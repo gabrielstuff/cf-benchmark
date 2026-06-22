@@ -1,0 +1,12 @@
+{
+  "name": "bench-runner",
+  "private": true,
+  "dependencies": {
+    "hono": "^4.12.26",
+    "@cloudflare/containers": "^0.3.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250101.0",
+    "wrangler": "^4.74.0"
+  }
+}

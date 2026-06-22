@@ -1,0 +1,155 @@
+======================================================
+ Docker Benchmark - Sun Jun 21 23:30:25 CEST 2026
+ Server: 2 CPUs, 512MB, 2 workers | wrk: 2 CPUs, 256MB
+ Duration: 10s per endpoint
+ Frameworks: gin elysia fastify blacksheep blacksheep-granian-orjson fastapi
+======================================================
+Building images...
+
+>>> Starting gin ...
+time="2026-06-21T23:33:07+02:00" level=warning msg="No services to build"
+ Image framework-benchmark-wrk Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 625B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.wrk
+#2 transferring dockerfile: 213B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.20
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+#5 resolve docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 1.80kB done
+#6 DONE 0.0s
+
+#7 [2/6] RUN apk add --no-cache wrk curl bash
+#7 0.097 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/APKINDEX.tar.gz
+#7 0.920 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/aarch64/APKINDEX.tar.gz
+#7 2.910 (1/17) Installing ncurses-terminfo-base (6.4_p20240420-r2)
+#7 3.033 (2/17) Installing libncursesw (6.4_p20240420-r2)
+#7 3.276 (3/17) Installing readline (8.2.10-r0)
+#7 3.497 (4/17) Installing bash (5.2.26-r0)
+#7 4.167 Executing bash-5.2.26-r0.post-install
+#7 4.170 (5/17) Installing ca-certificates (20260413-r0)
+#7 4.406 (6/17) Installing brotli-libs (1.1.0-r2)
+#7 5.120 (7/17) Installing c-ares (1.33.1-r0)
+#7 5.293 (8/17) Installing libunistring (1.2-r0)
+#7 6.262 (9/17) Installing libidn2 (2.3.7-r0)
+#7 6.421 (10/17) Installing nghttp2-libs (1.62.1-r0)
+#7 6.638 (11/17) Installing libpsl (0.21.5-r1)
+#7 6.748 (12/17) Installing zstd-libs (1.5.6-r0)
+#7 7.295 (13/17) Installing libcurl (8.14.1-r2)
+#7 7.735 (14/17) Installing curl (8.14.1-r2)
+#7 7.992 (15/17) Installing libgcc (13.2.1_git20240309-r1)
+#7 8.211 (16/17) Installing luajit (2.1_p20240314-r0)
+#7 9.098 (17/17) Installing wrk (4.2.0-r1)
+#7 9.262 Executing busybox-1.36.1-r31.trigger
+#7 9.268 Executing ca-certificates-20260413-r0.trigger
+#7 9.292 OK: 21 MiB in 31 packages
+#7 DONE 9.3s
+
+#8 [3/6] WORKDIR /bench
+#8 DONE 0.0s
+
+#9 [4/6] COPY post_validate.lua .
+#9 DONE 0.0s
+
+#10 [5/6] COPY docker/run_bench.sh .
+#10 DONE 0.0s
+
+#11 [6/6] RUN chmod +x run_bench.sh
+#11 DONE 0.2s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.2s done
+#12 exporting manifest sha256:b35e2e99db8197ba4266c5e08666105d17c5b081245ce96f227ba0fb12145a78 done
+#12 exporting config sha256:4c60bfd70bc57ebb26bcecdf662773cfbba7ed9fee5fa3ab64a139d4397dd1dd done
+#12 exporting attestation manifest sha256:6d1178b57c0e053837ce623a880960edd746093a773d05d1c75107a4102d92dc 0.0s done
+#12 exporting manifest list sha256:651569446c392218ecfdc92fe65aa99b011114e3d4bc16926a3940b792d61220 done
+#12 naming to docker.io/library/framework-benchmark-wrk:latest done
+#12 unpacking to docker.io/library/framework-benchmark-wrk:latest 0.1s done
+#12 DONE 0.4s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image framework-benchmark-wrk Built 
+ Container framework-benchmark-wrk-run-1374af744407 Creating 
+ Container framework-benchmark-wrk-run-1374af744407 Created 
+
+============================================
+ Benchmarking: gin
+ Target: gin:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+Server ready.
+Warming up (500 requests)...
+
+--- gin / plaintext ---
+Running 10s test @ http://gin:3000/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   534.10us  564.72us  25.89ms   91.90%
+    Req/Sec   130.25k     9.93k  149.11k    59.90%
+  2615419 requests in 10.10s, 324.25MB read
+Requests/sec: 258911.80
+Transfer/sec:     32.10MB
+
+--- gin / json ---
+Running 10s test @ http://gin:3000/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   565.89us  407.87us   4.72ms   66.23%
+    Req/Sec   120.04k     9.41k  136.23k    68.00%
+  2386634 requests in 10.00s, 341.41MB read
+Requests/sec: 238604.49
+Transfer/sec:     34.13MB
+
+--- gin / params ---
+Running 10s test @ http://gin:3000/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   593.68us  423.43us   4.17ms   65.67%
+    Req/Sec   114.06k     9.49k  131.08k    60.00%
+  2269174 requests in 10.00s, 326.77MB read
+Requests/sec: 226884.93
+Transfer/sec:     32.67MB
+
+--- gin / validate (POST) ---
+Running 10s test @ http://gin:3000/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   770.58us  551.52us   7.44ms   65.34%
+    Req/Sec    87.75k     6.52k   99.53k    63.00%
+  1745483 requests in 10.00s, 268.00MB read
+Requests/sec: 174522.68
+Transfer/sec:     26.80MB
+
+=== gin DONE ===
+>>> gin complete.
+
+>>> Starting elysia ...
+time="2026-06-21T23:35:20+02:00" level=warning msg="No services to build"
+time="2026-06-21T23:35:20+02:00" level=warning msg="No services to build"
+ Container framework-benchmark-wrk-run-f5efeb9321ee Creating 
+ Container framework-benchmark-wrk-run-f5efeb9321ee Created 
+
+============================================
+ Benchmarking: elysia
+ Target: elysia:3000
+ Config: 2t / 128c / 10s
+============================================
+Waiting for server...
+ERROR: Server did not start in 30s
+

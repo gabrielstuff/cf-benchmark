@@ -1,0 +1,146 @@
+======================================================
+ Cloudflare Workers Benchmark - Mon Jun 22 18:40:52 CEST 2026
+ wrk: 2t / 128c / 10s per endpoint
+ Workers: elysia hono h3
+ (Fastify excluded: find-my-way JIT + crypto.randomBytes
+  incompatible with Workers V8 isolate restrictions)
+======================================================
+
+>>> Benchmarking elysia (https://bench-elysia.edumapper-com.workers.dev) ...
+Warming up...
+
+--- elysia / plaintext ---
+Running 10s test @ https://bench-elysia.edumapper-com.workers.dev/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.16ms   13.61ms 200.21ms   90.00%
+    Req/Sec     1.75k   358.57     2.31k    73.50%
+  34979 requests in 10.09s, 19.35MB read
+Requests/sec:   3467.31
+Transfer/sec:      1.92MB
+
+--- elysia / json ---
+Running 10s test @ https://bench-elysia.edumapper-com.workers.dev/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.95ms   54.42ms 753.52ms   95.39%
+    Req/Sec     1.70k   460.38     2.44k    80.51%
+  33336 requests in 10.09s, 19.08MB read
+Requests/sec:   3304.78
+Transfer/sec:      1.89MB
+
+--- elysia / user/42 ---
+Running 10s test @ https://bench-elysia.edumapper-com.workers.dev/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.52ms   30.84ms 596.18ms   97.59%
+    Req/Sec     1.84k   267.50     2.38k    82.83%
+  36539 requests in 10.03s, 20.95MB read
+Requests/sec:   3644.72
+Transfer/sec:      2.09MB
+
+--- elysia / validate (POST) ---
+Running 10s test @ https://bench-elysia.edumapper-com.workers.dev/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.33ms   34.64ms 563.71ms   97.81%
+    Req/Sec     1.63k   232.70     2.19k    73.87%
+  32471 requests in 10.10s, 18.92MB read
+Requests/sec:   3215.48
+Transfer/sec:      1.87MB
+
+>>> elysia complete.
+
+>>> Benchmarking hono (https://bench-hono.edumapper-com.workers.dev) ...
+Warming up...
+
+--- hono / plaintext ---
+Running 10s test @ https://bench-hono.edumapper-com.workers.dev/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.99ms    6.11ms  88.47ms   72.57%
+    Req/Sec     1.93k   236.04     2.43k    71.21%
+  38419 requests in 10.02s, 21.54MB read
+Requests/sec:   3833.50
+Transfer/sec:      2.15MB
+
+--- hono / json ---
+Running 10s test @ https://bench-hono.edumapper-com.workers.dev/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.31ms    9.90ms 221.11ms   91.46%
+    Req/Sec     1.94k   233.12     2.38k    69.19%
+  38475 requests in 10.02s, 21.79MB read
+Requests/sec:   3840.98
+Transfer/sec:      2.18MB
+
+--- hono / user/42 ---
+Running 10s test @ https://bench-hono.edumapper-com.workers.dev/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.74ms   13.23ms 310.77ms   96.19%
+    Req/Sec     1.87k   242.47     2.39k    82.91%
+  37423 requests in 10.10s, 21.23MB read
+Requests/sec:   3706.21
+Transfer/sec:      2.10MB
+
+--- hono / validate (POST) ---
+Running 10s test @ https://bench-hono.edumapper-com.workers.dev/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.07ms   14.68ms 326.74ms   96.92%
+    Req/Sec     1.81k   234.68     2.36k    77.89%
+  36022 requests in 10.09s, 20.78MB read
+Requests/sec:   3568.44
+Transfer/sec:      2.06MB
+
+>>> hono complete.
+
+>>> Benchmarking h3 (https://bench-h3.edumapper-com.workers.dev) ...
+Warming up...
+
+--- h3 / plaintext ---
+Running 10s test @ https://bench-h3.edumapper-com.workers.dev/plaintext
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.09ms    7.40ms 147.78ms   75.49%
+    Req/Sec     1.82k   254.60     2.30k    75.25%
+  36104 requests in 10.02s, 20.03MB read
+Requests/sec:   3602.08
+Transfer/sec:      2.00MB
+
+--- h3 / json ---
+Running 10s test @ https://bench-h3.edumapper-com.workers.dev/json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.59ms   23.74ms 427.51ms   98.12%
+    Req/Sec     1.89k   258.31     2.46k    76.77%
+  37530 requests in 10.02s, 21.54MB read
+Requests/sec:   3746.45
+Transfer/sec:      2.15MB
+
+--- h3 / user/42 ---
+Running 10s test @ https://bench-h3.edumapper-com.workers.dev/user/42
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    33.14ms   10.78ms 384.93ms   95.16%
+    Req/Sec     1.94k   228.36     2.42k    74.24%
+  38633 requests in 10.02s, 22.21MB read
+Requests/sec:   3855.52
+Transfer/sec:      2.22MB
+
+--- h3 / validate (POST) ---
+Running 10s test @ https://bench-h3.edumapper-com.workers.dev/validate
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.41ms   44.98ms 664.58ms   97.93%
+    Req/Sec     1.84k   216.19     2.32k    78.00%
+  36894 requests in 10.10s, 21.56MB read
+Requests/sec:   3651.99
+Transfer/sec:      2.13MB
+
+>>> h3 complete.
+
+======================================================
+ ALL DONE - Results: /Users/gabrieldelattre/Sources/edumapper/framework-test/framework-benchmark/results/cloudflare_benchmark_20260622_184052.txt
+======================================================
